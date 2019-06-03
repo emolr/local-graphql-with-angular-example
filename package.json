@@ -4,7 +4,7 @@
   "description": "This is an example for those who wants to get the developer experience benefits from using GraphQL but are building front-end applications against already exisiting API's like REST or others and don't have the time, infrastructure or need for hosting it in the cloud.",
   "main": "index.js",
   "scripts": {
-    "bootstrap": "cd server && npm install && cd ../client && npm install && ..",
+    "bootstrap": "cd server && npm install && cd ../client && npm install && cd ..",
     "start": "concurrently \"npm run generate -- --watch\" \"cd client && npm start\" \"cd server && npm start\"",
     "build": "cd client && npm run build",
     "build:prod": "cd client && npm run build -- --prod",
@@ -25,9 +25,7 @@
     "concurrently": "^4.1.0",
     "graphql": "14.3.1",
     "ts-node": "^7.0.1",
-    "typescript": "~3.4.3"
-  },
-  "dependencies": {
+    "typescript": "~3.4.3",
     "schema-typescript-ast": "^1.0.0"
   }
 }

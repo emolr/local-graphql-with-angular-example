@@ -11,6 +11,7 @@ This way all the logic for getting and mapping the data recieved from varius end
 * [Apollo Server](https://www.apollographql.com/docs/apollo-server/) - Used for inspecting the GraphQL API using [GraphQL Playground](https://github.com/prisma/graphql-playground).
 * [GraphQL-tools](https://www.apollographql.com/docs/graphql-tools/) - Used for stiching together a schema from `type definitions` and `resolvers` to load locally with the `Apollo Angular Module`.
 * [GraphQL code generator](https://graphql-code-generator.com/) - Used for generating typescript types based on the GraphQL schema and generating Angular services from `.graphql` file queries in the Angular client.
+* [PokéAPI](https://pokeapi.co/) - Used for testing REST from graphql
 
 ## Get started
 
@@ -18,35 +19,32 @@ This way all the logic for getting and mapping the data recieved from varius end
 
 This will install dependencies for both the server and client
 ```sh
-cd client && npm install && .. && cd server && npm install && ..
+npm run bootstrap
 ```
 
-### Start the server
+### Start the server and client concurrently
 
-After starting the server you can open up http://localhost:4000 to inspect the GraphQL server on the playground
+After starting the server you can open up http://localhost:4000 to inspect the GraphQL server on the playground and http://localhost:4200 for the angular application. (Also watches for graphql file changes)
 
 ```sh
-cd server && npm start
+npm start
 ```
 
-### Start the client application
 
-If you already started the server, make sure to be in the root folder.
+### To generate Typescript types, schema for apollo-angular and angular services
 
 ```sh
-cd client && npm start
+npm run generate
 ```
 
-### To generate Typescript types
-
-This will run a ts-node server to generate a `.graphql` file and use it by `GraphQL Code Generator` to generate typescript types. It will also look for `.graphql` files in `client/src/app/graphql/**/*` for `.graphql` files containing GraphQL queries and mutations and generate Angular services automatically. Read more in the [official documentation](https://graphql-code-generator.com/docs/plugins/typescript-apollo-angular)
+### Build the client application for local testing
 
 ```sh
-cd client && npm run generate
+npm run build
 ```
 
 ### Build the client application for production
 
 ```sh
-cd client && npm run build -- --prod
+npm run build:prod
 ```
