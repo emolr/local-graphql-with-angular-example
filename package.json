@@ -1,0 +1,33 @@
+{
+  "name": "server-client",
+  "version": "1.0.0",
+  "description": "This is an example for those who wants to get the developer experience benefits from using GraphQL but are building front-end applications against already exisiting API's like REST or others and don't have the time, infrastructure or need for hosting it in the cloud.",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "cd server && npm install && cd ../client && npm install && ..",
+    "start": "concurrently \"npm run generate -- --watch\" \"cd client && npm start\" \"cd server && npm start\"",
+    "build": "cd client && npm run build",
+    "build:prod": "cd client && npm run build -- --prod",
+    "generate": "graphql-codegen --config codegen.yml",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.2.0",
+    "@graphql-codegen/fragment-matcher": "^1.2.0",
+    "@graphql-codegen/introspection": "^1.2.0",
+    "@graphql-codegen/schema-ast": "^1.2.0",
+    "@graphql-codegen/typescript": "1.2.0",
+    "@graphql-codegen/typescript-apollo-angular": "^1.2.0",
+    "@graphql-codegen/typescript-graphql-files-modules": "^1.2.0",
+    "@graphql-codegen/typescript-operations": "^1.2.0",
+    "concurrently": "^4.1.0",
+    "graphql": "14.3.1",
+    "ts-node": "^7.0.1",
+    "typescript": "~3.4.3"
+  },
+  "dependencies": {
+    "schema-typescript-ast": "^1.0.0"
+  }
+}
