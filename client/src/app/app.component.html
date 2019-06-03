@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h2>This is from graphql:</h2>
+  <h1>
+    {{world$ | async | select: 'hello'}}
+  </h1>
+  <br><br><br>
+  <h2>
+    This pokemon is from graphql (resolved via rest API):
+  </h2>
+  <div *ngIf="pokemon$ | async | select: 'pokemon' as pokemon">
+    <h1>
+      {{pokemon.name}}
+    </h1>
+    <img width="300" alt="Pokemon" src="{{pokemon.picture}}">
+  </div>
+</div>
