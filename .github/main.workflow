@@ -1,6 +1,6 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["actions-gh-pages"]
+  resolves = ["peaceiris/actions-gh-pages"]
 }
 
 action "Install" {
@@ -21,7 +21,7 @@ action "Filters for GitHub Actions" {
 }
 
 action "actions-gh-pages" {
-  uses = "actions-gh-pages"
+  uses = "peaceiris/actions-gh-pages"
   needs = ["Filters for GitHub Actions"]
   secrets = ["ACTIONS_DEPLOY_KEY"]
   env = {
