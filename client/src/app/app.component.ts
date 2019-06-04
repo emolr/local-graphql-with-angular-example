@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Apollo } from 'apollo-angular';
+import { PokemonGQL } from '../generated/graphql'
 import gql from 'graphql-tag'
 
 const HELLO_WORLD_GQL = gql`
@@ -23,10 +24,9 @@ const POKEMON_GQL = gql`
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'client';
   world$ = this.apollo.query({query: HELLO_WORLD_GQL})
-  pokemon$ = this.apollo.query({query: POKEMON_GQL, variables: {name: 'pikachu'}})
+  pokemon$ = this.pokemonGQL.fetch({name: 'pikachu'})
 
-  constructor(public apollo: Apollo) {}
+  constructor(public apollo: Apollo, public pokemonGQL: PokemonGQL) {}
 
 }

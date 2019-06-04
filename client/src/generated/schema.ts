@@ -11,3 +11,5 @@ export const schema = gql`
     pokemon(name: String!): Pokemon!
   }
 `;
+
+export default schema;

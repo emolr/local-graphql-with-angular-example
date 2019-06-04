@@ -10,7 +10,7 @@ generates:
       - "fragment-matcher"
   client/src/generated/schema.ts:
     plugins:
-      - schema-typescript-ast
+      - graphql-tag-typescript-schema
   ./graphql.schema.json:
     plugins:
       - "introspection"
