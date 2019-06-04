@@ -1,6 +1,6 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["peaceiris/actions-gh-pages"]
+  resolves = ["actions-gh-pages"]
 }
 
 action "Install" {
