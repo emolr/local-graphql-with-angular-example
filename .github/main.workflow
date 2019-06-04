@@ -28,3 +28,4 @@ action "Deploy" {
     PUBLISH_BRANCH = "gh-pages"
   }
   secrets = ["ACTIONS_DEPLOY_KEY"]
+}
