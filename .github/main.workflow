@@ -1,6 +1,6 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["actions-gh-pages"]
+  resolves = ["Filters for GitHub Actions"]
 }
 
 action "Install" {
@@ -20,12 +20,3 @@ action "Filters for GitHub Actions" {
   args = "branch master"
 }
 
-action "actions-gh-pages" {
-  uses = "peaceiris/actions-gh-pages"
-  needs = ["Filters for GitHub Actions"]
-  secrets = ["ACTIONS_DEPLOY_KEY"]
-  env = {
-    PUBLISH_DIR = "./client/dist/client"
-    PUBLISH_BRANCH = "gh-pages"
-  }
-}
