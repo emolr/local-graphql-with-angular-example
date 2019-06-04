@@ -24,7 +24,7 @@ action "Deploy" {
   needs = "Build"
   uses = "peaceiris/actions-gh-pages@v1.0.1"
   env = {
-    PUBLISH_DIR = "./public"
+    PUBLISH_DIR = "./client/dist/client"
     PUBLISH_BRANCH = "gh-pages"
   }
   secrets = ["ACTIONS_DEPLOY_KEY"]
